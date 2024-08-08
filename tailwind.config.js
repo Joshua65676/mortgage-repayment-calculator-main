@@ -21,6 +21,7 @@ export default {
          'Slate-500': 'hsl(200, 26%, 54%)',
          'Slate-700': 'hsl(200, 24%, 40%)',
          'Slate-900': 'hsl(202, 55%, 16%)',
+         'Background': 'rgba(14, 36, 49, 255)',
       }
     },
   },

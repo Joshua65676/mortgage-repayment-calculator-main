@@ -6,6 +6,7 @@ const Form: React.FC = () => {
   const [interestRate, setInterestRate] = useState<number>();
   const [mortgageTerm, setMortgageTerm] = useState<number>();
   const [monthlyPayment, setMonthlyPayment] = useState<number | null>(null);
+  const [selectedType, setSelectedType] = useState<string>();
 
   const calculateMonthlyPayment = () => {
     // Implement your calculation logic here
@@ -18,8 +19,12 @@ const Form: React.FC = () => {
 
     setMonthlyPayment(calculatedMonthlyPayment);
   };
+  
+  const totalRepayment = monthlyPayment !== null ? monthlyPayment * (mortgageTerm * 12) : null;
+
 
   return (
+    <>
     <div className="space-y-5">
         {/* Mortgage Amount */}
       <div className="ml-10 space-y-2">
@@ -90,24 +95,26 @@ const Form: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="">
+          <div className="flex border-2 w-96 h-10 rounded-md">
             <input
-             type=""
-             placeholder="Repayment"
-             value={interestRate}
-             className="border-2 w-96 h-10 rounded-md"
-             onChange={(e) => setInterestRate(parseFloat(e.target.value))}
+             type="radio"
+             name="Mortgage Type"
+             value={""}
+             className="w-9 h-5 ml-5 mt-2.5"
+             onChange={e=>setSelectedType(e.target.value)}
             />
+            <span className=" text-Slate-900 font-semibold mt-2 ml-2">Repayment</span>
           </div>
 
-          <div className="">
+          <div className="flex border-2 w-96 h-10 rounded-md">
             <input
-             type=""
-             placeholder="Interest Only"
-             value={interestRate}
-             className="border-2 w-96 h-10 rounded-md"
-             onChange={(e) => setInterestRate(parseFloat(e.target.value))}
+             type="radio"
+             name="Mortgage Type"
+             value={""}
+             className="w-9 h-5 ml-5 mt-2.5"
+             onChange={e=>setSelectedType(e.target.value)}
             />
+            <span className="text-Slate-900 font-semibold mt-2 ml-2">Interest Only</span>
           </div>
         </div>
       </div>
@@ -119,8 +126,16 @@ const Form: React.FC = () => {
         </div>
       </button>
 
-      {monthlyPayment !== null && <p>Monthly Payment: €{monthlyPayment.toFixed(2)}</p>}
     </div>
+       <div className="ml-[600px] w-96 -mt-40">
+         {monthlyPayment !== null && (
+          <div className="">
+            <p className="">Monthly Payment: €{monthlyPayment.toFixed(2)}</p>
+            <p className="">Total Repayment: €{totalRepayment?.toFixed(2) || "N/A"}</p>
+          </div>
+         )}
+       </div>
+    </>
   );
 };
 
