@@ -14,6 +14,7 @@ export default {
     extend: {
       colors: {
          'Lime': 'hsl(61, 70%, 52%)',
+         'Limegb': 'rgba(235, 238, 151, 255)',
          'Red': 'hsl(4, 69%, 50%)',
          'White': 'hsl(0, 0%, 100%)',
          'Slate-100': 'hsl(202, 86%, 94%)',

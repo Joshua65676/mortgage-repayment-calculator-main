@@ -11,22 +11,6 @@ const Completed = () => {
           To adjust the results, edit the form and click “calculate repayments” again.
         </p>
       </div>
-          {/* Your results */}
-      <div className="bg-Background h-56 rounded-lg border-t-Lime border-t-4">
-          {/* Your monthly repayments */}
-        <div className="">
-            <div className="p-8">
-             <span className="text-Slate-500 font-medium">
-               Your monthly repayments
-             </span>
-            </div>
-            <div className="">
-              {/* {monthlyPayment !== null && <p>Monthly Payment: €{monthlyPayment}</p>} */}
-            </div>
-        </div>
-          {/* Total you'll repay over the term */}
-        
-      </div>
     </div>
   )
 }
