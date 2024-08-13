@@ -71,7 +71,7 @@ const Form: React.FC = () => {
       </div>
 
       {/* Mortgage Term & Interest Rate */}
-      <div className="flex space-x-7 ml-10">
+      <div className="md:flex md:space-x-7 ml-10 space-y-3 md:space-y-0">
         <div className=" space-y-2">
           <div className="">
             <h3 className="text-Slate-300 font-semibold">Mortgage Term</h3>
@@ -82,7 +82,7 @@ const Form: React.FC = () => {
               type="number"
               placeholder=""
               value={mortgageTerm}
-              className="border-2 h-10 rounded-md pl-3 hover:border-Slate-900"
+              className="border-2 h-10 rounded-md pl-3 hover:border-Slate-900 w-96 md:w-48"
               onChange={(e) => setMortgageTerm(parseFloat(e.target.value))}
             />
             <span className=" text-gray-500 absolute bg-Slate-100 w-14 h-9 rounded-r-md -ml-[58px] mt-[1.5px]">
@@ -102,7 +102,7 @@ const Form: React.FC = () => {
              type="number"
              placeholder=""
              value={interestRate}
-             className="border-2 w-40 h-10 rounded-md pl-3 hover:border-Slate-900"
+             className="border-2 md:w-40 h-10 rounded-md pl-3 hover:border-Slate-900 w-96"
              onChange={(e) => setInterestRate(parseFloat(e.target.value))}
            />
            <span className=" text-gray-500 absolute bg-Slate-100 w-12 h-9 rounded-r-md -ml-[50px] mt-[1.5px]">
@@ -145,9 +145,9 @@ const Form: React.FC = () => {
         </div>
       </div>
 
-      <button onClick={calculateMonthlyPayment} className="ml-10 border-2 w-72 h-14 rounded-3xl bg-Lime hover:bg-Limegb">
+      <button onClick={calculateMonthlyPayment} className="md:ml-10 ml-10 border-2 md:w-72 w-96 h-14 rounded-3xl bg-Lime hover:bg-Limegb">
         <div onClick={toggleVisibility}>
-          <div className="flex space-x-3 ml-12">
+          <div className="flex space-x-3 md:ml-12 ml-20">
             <img src="/src/assets/images/icon-calculator.svg" alt="" className="" />
             <span className="font-bold text-Slate-900">Calculate Repayments</span>
           </div>
@@ -157,8 +157,12 @@ const Form: React.FC = () => {
 
     </div>
        {/* the results */}
-      <div className="w-[500px] ml-5 -mt-[108px] h-[520px] rounded-r-3xl rounded-bl-[70px] bg-Slate-900">
-        {showFormSide ? null : <FormSide />}
+      <div className="w-[500px] md:ml-5 md:-mt-[108px] h-[520px] md:rounded-r-3xl md:rounded-bl-[70px] bg-Slate-900 -ml-3 mt-8 ">
+        {showFormSide ? null :
+        <div className="p-1">
+          <FormSide />
+        </div>
+        }
         
        <div className=" w-[500px]">
          {monthlyPayment !== null && (
