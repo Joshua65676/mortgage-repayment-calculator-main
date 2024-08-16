@@ -4,9 +4,9 @@ import FormSide from "./formside";
 import Completed from "./completed";
 
 const Form: React.FC = () => {
-  const [mortgageAmount, setMortgageAmount] = useState<number>();
-  const [interestRate, setInterestRate] = useState<number>();
-  const [mortgageTerm, setMortgageTerm] = useState<number>();
+  const [mortgageAmount, setMortgageAmount] = useState<number>(0);
+  const [interestRate, setInterestRate] = useState<number>(0);
+  const [mortgageTerm, setMortgageTerm] = useState<number>(0);
   const [monthlyPayment, setMonthlyPayment] = useState<number | null>(null);
   const [selectedType, setSelectedType] = useState<string>();
   const [selectedType1, setSelectedType1] = useState<string>();
@@ -28,9 +28,9 @@ const Form: React.FC = () => {
   const totalRepayment = monthlyPayment !== null ? monthlyPayment * (mortgageTerm * 12) : null;
 
   const handleClearAll = () => {
-    setMortgageAmount('');
-    setMortgageTerm('');
-    setInterestRate('');
+    setMortgageAmount(0);
+    setMortgageTerm(0);
+    setInterestRate(0);
     setMonthlyPayment(0);
     setSelectedType('');
     setSelectedType1('');
@@ -62,7 +62,7 @@ const Form: React.FC = () => {
           </span>
           <input
             type="number"
-            placeholder=""
+            placeholder="0"
             value={mortgageAmount}
             className="border-2 w-96 h-10 rounded-md pl-16 hover:border-Slate-900"
             onChange={(e) => setMortgageAmount(parseFloat(e.target.value))}
@@ -80,7 +80,7 @@ const Form: React.FC = () => {
           <div className="">
             <input
               type="number"
-              placeholder=""
+              placeholder="0"
               value={mortgageTerm}
               className="border-2 h-10 rounded-md pl-3 hover:border-Slate-900 w-96 md:w-48"
               onChange={(e) => setMortgageTerm(parseFloat(e.target.value))}
@@ -100,7 +100,7 @@ const Form: React.FC = () => {
          <div className="">
            <input
              type="number"
-             placeholder=""
+             placeholder="0"
              value={interestRate}
              className="border-2 md:w-40 h-10 rounded-md pl-3 hover:border-Slate-900 w-96"
              onChange={(e) => setInterestRate(parseFloat(e.target.value))}
@@ -123,6 +123,7 @@ const Form: React.FC = () => {
             <input
              type="radio"
              name="Mortgage Type"
+             placeholder="0"
              value="radio1"
              className="w-9 h-5 ml-5 mt-2.5"
              checked={selectedType === 'radio1'}
@@ -135,6 +136,7 @@ const Form: React.FC = () => {
             <input
              type="radio"
              name="Mortgage Type"
+             placeholder="0"
              value="radio2"
              checked={selectedType1 === 'radio2'}
              className="w-9 h-5 ml-5 mt-2.5"
