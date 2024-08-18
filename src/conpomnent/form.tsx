@@ -159,7 +159,7 @@ const Form: React.FC = () => {
 
     </div>
        {/* the results */}
-      <div className="w-[500px] md:ml-5 md:-mt-[108px] h-[520px] md:rounded-r-3xl md:rounded-bl-[70px] bg-Slate-900 -ml-3 mt-8 ">
+      <div className="md:w-[500px] sm:w-[400px] md:ml-5 md:-mt-[108px] h-[520px] md:rounded-r-3xl md:rounded-bl-[70px] bg-Slate-900 -ml-3 mt-8 ">
         {showFormSide ? null :
         <div className="p-1">
           <FormSide />
