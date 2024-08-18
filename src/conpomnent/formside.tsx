@@ -4,7 +4,7 @@ const FormSide = () => {
     <div className="">
       <div className="text-center mt-28 space-y-4 sm:-ml-10 md:ml-0">
         <div className="ml-40">
-            <img src="/assets/images/illustration-empty.svg" alt="" className="" />
+            <img src="/assets/images/illustration-empty.png" alt="" className="" />
         </div>
         <div className="">
             <h1 className="text-White text-2xl font-semibold">Results shown here</h1>
