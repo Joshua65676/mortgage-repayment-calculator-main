@@ -150,7 +150,7 @@ const Form: React.FC = () => {
       <button onClick={calculateMonthlyPayment} className="md:ml-10 ml-10 border-2 md:w-72 w-80 h-14 rounded-3xl bg-Lime hover:bg-Limegb">
         <div onClick={toggleVisibility}>
           <div className="flex space-x-3 md:ml-12 ml-14">
-            <img src="/src/assets/icon-calculator.png" alt="" className="" />
+            <img src="icon-calculator.svg" alt="" className="" />
             <span className="font-bold text-Slate-900">Calculate Repayments</span>
           </div>
         </div>
@@ -159,7 +159,7 @@ const Form: React.FC = () => {
 
     </div>
        {/* the results */}
-      <div className="md:w-[500px] sm:w-[400px] md:ml-5 md:-mt-[108px] h-[520px] md:rounded-r-3xl md:rounded-bl-[70px] bg-Slate-900 -ml-3 mt-8 ">
+      <div className="md:w-[500px] sm:w-[400px] md:ml-5 md:-mt-[108px] h-[520px] md:rounded-r-3xl md:rounded-bl-[70px] bg-Slate-900 -ml-3 mt-8 sm:ml-1">
         {showFormSide ? null :
         <div className="p-1">
           <FormSide />
