@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import FormSide from "./formside";
 import Completed from "./completed";
+import Calculator from "../assets/icon-calculator.png"
 
 const Form: React.FC = () => {
   const [mortgageAmount, setMortgageAmount] = useState<number>(0);
@@ -150,7 +151,7 @@ const Form: React.FC = () => {
       <button onClick={calculateMonthlyPayment} className="md:ml-10 ml-10 border-2 md:w-72 w-80 h-14 rounded-3xl bg-Lime hover:bg-Limegb">
         <div onClick={toggleVisibility}>
           <div className="flex space-x-3 md:ml-12 ml-14">
-            <img src="icon-calculator.svg" alt="" className="" />
+            <img src={Calculator} alt="" className="" />
             <span className="font-bold text-Slate-900">Calculate Repayments</span>
           </div>
         </div>

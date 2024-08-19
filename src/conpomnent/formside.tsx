@@ -1,13 +1,13 @@
-// import { Illustration } from "../assets/illustration-empty.png"
+import  Illustration  from "../assets/illustration-empty.png"
 
 const FormSide = () => {
   return (
     <div className="">
-      <div className="text-center mt-28 space-y-4 sm:-ml-14 md:ml-0">
-        <div className="ml-40">
-            <img src="illustration-empty.svg" alt="" className="" />
+      <div className="text-center mt-28 space-y-4 sm:-ml-16 md:ml-0">
+        <div className="md:ml-36 sm:ml-44">
+            <img src={Illustration} alt="" className="" />
         </div>
-        <div className="sm:ml-20">
+        <div className="sm:ml-20 md:ml-0">
             <h1 className="text-White text-2xl font-semibold">Results shown here</h1>
         </div>
         <div className="sm:ml-24 md:ml-0">
